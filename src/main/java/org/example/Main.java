@@ -1,29 +1,16 @@
 package org.example;
 
-import java.math.BigDecimal;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        BigDecimal productCost = new BigDecimal("9.99");
-        BigDecimal vatRate = new BigDecimal("0.05");
-        int units = 10_000;
+        Scanner in = new Scanner(System.in);
 
-        BigDecimal vatPerUnit = productCost.multiply(vatRate);
-        BigDecimal grossPerUnit = productCost.add(vatPerUnit);
-        System.out.println("VAT per unit: " + vatPerUnit);
+        System.out.println("--- Task 3: quadratic equation ---");
+        Task3Quadratic.run(in);
 
-        BigDecimal totalNet = BigDecimal.ZERO;
-        BigDecimal totalVat = BigDecimal.ZERO;
-        BigDecimal totalGross = BigDecimal.ZERO;
-
-        for (int i = 0; i < units; i++) {
-            totalNet = totalNet.add(productCost);
-            totalVat = totalVat.add(vatPerUnit);
-            totalGross = totalGross.add(grossPerUnit);
-        }
-
-        System.out.println("Total net sales value: " + totalNet);
-        System.out.println("Total VAT amount: " + totalVat);
-        System.out.println("Total gross value: " + totalGross);
+        System.out.println();
+        System.out.println("--- Task 5: smallest and largest of 10 random numbers ---");
+        Task5MinMax.run();
     }
 }
